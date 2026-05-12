@@ -12,7 +12,7 @@
         "charliermarsh.ruff"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+        "python.defaultInterpreterPath": "/opt/venv/bin/python",
         "python.terminal.activateEnvironment": true,
         "python.formatting.provider": "none",
         "editor.formatOnSave": true,
@@ -41,7 +41,7 @@
     }
   },
   
-  "postCreateCommand": "uv pip install --python .venv/bin/python -e .",
+  "postCreateCommand": "python --version && python -c \"import polars, sklearn, matplotlib, seaborn, numpy; print('All dependencies ready')\"",
   
   "remoteUser": "root",
   "workspaceFolder": "/workspace",

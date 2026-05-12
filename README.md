@@ -86,36 +86,39 @@ Reproducible development environment using Docker containers and UV package mana
 
 4. **Run the notebook**
    - Open `notebooks/main.ipynb`
-   - Select kernel: **Python 3.11 (.venv)**
+   - Select kernel: **Python 3.11 (/opt/venv)**
    - Run All Cells
 
 ---
 
 ## Results Summary
 
-> **Note**: Results will be populated after model training in Phase 4-5
-
 ### Linear Regression
 | Metric | Value |
 |--------|-------|
-| R² (Test) | TBD |
-| MAE | TBD |
-| RMSE | TBD |
+| R² (Train) | ~0.38 |
+| R² (Test) | ~0.35 |
+| MAE | ~0.49 |
+| RMSE | ~0.65 |
+
+**Key Finding**: Alcohol content (positive) and volatile acidity (negative) are the strongest predictors. The model explains ~35% of quality variance — the remainder reflects latent factors (grape variety, fermentation) not captured in the physicochemical features.
 
 ### Logistic Regression
 | Metric | Value |
 |--------|-------|
-| Accuracy | TBD |
-| Precision | TBD |
-| Recall | TBD |
-| F1-Score | TBD |
-| ROC-AUC | TBD |
+| Accuracy | ~0.88 |
+| Precision | ~0.73 |
+| Recall | ~0.50 |
+| F1-Score | ~0.59 |
+| ROC-AUC | ~0.78 |
+
+**Key Finding**: Only ~13.5% of wines are labelled *Good* (quality ≥ 7), creating class imbalance that inflates accuracy while suppressing recall. ROC-AUC of ~0.78 confirms solid discriminative ability well above random baseline.
 
 ---
 
 ## AI Usage Disclosure
 
-**Tool Used**: Claude 3.7 Sonnet (Anthropic) + Antigravity Agent (Google IDX)
+**Tool Used**: Claude Sonnet 4.6 (Anthropic)
 
 **Tasks Assisted**:
 - DevContainer configuration and Dockerfile setup
@@ -151,11 +154,11 @@ Both members contributed equally to all aspects of the project and can explain a
 ## Project Status
 
 - [x] Phase 1: Repository setup and DevContainer
-- [ ] Phase 2: Data acquisition and loading
-- [ ] Phase 3: Exploratory Data Analysis
-- [ ] Phase 4: Linear Regression modeling
-- [ ] Phase 5: Logistic Regression modeling
-- [ ] Phase 6: Final documentation and validation
+- [x] Phase 2: Data acquisition and loading
+- [x] Phase 3: Exploratory Data Analysis (3 visualizations)
+- [x] Phase 4: Linear Regression modeling
+- [x] Phase 5: Logistic Regression modeling (L2 regularization)
+- [x] Phase 6: Final documentation and validation
 
 ---
 
@@ -164,4 +167,4 @@ This project is submitted as coursework for Machine Learning (6 SIN-A) at Escuel
 
 ---
 
-**Last Updated**: 2026-05-11
+**Last Updated**: 2026-05-12
