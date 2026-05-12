@@ -1,18 +1,18 @@
 # Machine Learning Project: Wine Quality Prediction
 **Course**: Machine Learning (6 SIN-A)  
-**Institution**: Escuela Politécnica Nacional  
+**Institution**: Universidad Internacional del Ecuador  
 **Team Members**: Andrés Quisilema & José Quishpe  
-**Date**: Mayo 2026
+**Date**: 10 Mayo 2026
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 This project implements both **Linear Regression** and **Logistic Regression** models to predict wine quality based on physicochemical properties, demonstrating a complete machine learning pipeline with reproducible tooling.
 
 ---
 
-## 📊 Dataset
+## Dataset
 **Wine Quality Dataset** (UCI Machine Learning Repository)
 - **Source**: [UCI Wine Quality](https://archive.ics.uci.edu/dataset/186/wine+quality)
 - **Samples**: 1,599 red wines
@@ -23,7 +23,7 @@ This project implements both **Linear Regression** and **Logistic Regression** m
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Data Wrangling: **Polars 1.8.x**
 We selected **Polars** over traditional frameworks due to its modern architecture built on Rust, offering superior speed and memory efficiency. Polars' lazy evaluation and method-chaining API enable expressive, automatically-optimized data pipelines. This choice demonstrates awareness of emerging tools in data science while maintaining practical efficiency for exploratory analysis.
@@ -36,7 +36,7 @@ Reproducible development environment using Docker containers and UV package mana
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 .
@@ -56,7 +56,7 @@ Reproducible development environment using Docker containers and UV package mana
 
 ---
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 - **Docker Desktop** installed and running
@@ -91,7 +91,7 @@ Reproducible development environment using Docker containers and UV package mana
 
 ---
 
-## 📈 Results Summary
+## Results Summary
 
 > **Note**: Results will be populated after model training in Phase 4-5
 
@@ -113,7 +113,7 @@ Reproducible development environment using Docker containers and UV package mana
 
 ---
 
-## 🤖 AI Usage Disclosure
+## AI Usage Disclosure
 
 **Tool Used**: Claude 3.7 Sonnet (Anthropic) + Antigravity Agent (Google IDX)
 
@@ -130,7 +130,7 @@ All generated code was thoroughly reviewed, tested, and understood by both team 
 
 ---
 
-## 👥 Team Contributions
+## Team Contributions
 
 **Andrés Quisilema**:
 - Repository setup and DevContainer configuration
@@ -148,9 +148,9 @@ Both members contributed equally to all aspects of the project and can explain a
 
 ---
 
-## 📝 Project Status
+## Project Status
 
-- [x] Phase 1: Repository setup and DevContainer ✅
+- [x] Phase 1: Repository setup and DevContainer
 - [ ] Phase 2: Data acquisition and loading
 - [ ] Phase 3: Exploratory Data Analysis
 - [ ] Phase 4: Linear Regression modeling
@@ -159,7 +159,7 @@ Both members contributed equally to all aspects of the project and can explain a
 
 ---
 
-## 📄 License
+## License
 This project is submitted as coursework for Machine Learning (6 SIN-A) at Escuela Politécnica Nacional. All code is available for educational purposes.
 
 ---
