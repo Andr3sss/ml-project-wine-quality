@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IDX / DevContainer
+.idx/
+
+# UV
+.uv/
+
+# Data (grande, no debe estar en Git)
+data/*.csv
+data/*.zip
+data/*.json
+
+# Outputs temporales
+outputs/*.png
+outputs/*.jpg
+outputs/*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/

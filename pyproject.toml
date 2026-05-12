@@ -1,0 +1,46 @@
+[project]
+name = "ml-wine-quality"
+version = "1.0.0"
+description = "Machine Learning Final Project - Wine Quality Prediction"
+authors = [
+    {name = "Andrés Quisilema", email = "andres.quisilema@epn.edu.ec"},
+    {name = "José Quishpe", email = "jose.quishpe@epn.edu.ec"}
+]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    # Data processing con Polars (NO Pandas)
+    "polars>=1.8.0,<2.0.0",
+    
+    # Machine Learning
+    "scikit-learn>=1.5.0,<1.6.0",
+    
+    # Visualización
+    "matplotlib>=3.9.0,<4.0.0",
+    "seaborn>=0.13.0,<0.14.0",
+    
+    # Jupyter
+    "jupyter>=1.0.0,<2.0.0",
+    "ipykernel>=6.29.0,<7.0.0",
+    
+    # Utilidades
+    "numpy>=1.26.0,<2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.5.0",      # Linter/formatter
+    "mypy>=1.11.0",     # Type checking
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
