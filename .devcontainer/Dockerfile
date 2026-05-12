@@ -5,7 +5,6 @@ FROM python:3.11-slim-bookworm
 LABEL maintainer="Andrés Quisilema & José Quishpe"
 LABEL description="ML Final Project - Wine Quality DevContainer"
 
-# Evitar prompts interactivos
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
 ENV PIP_NO_CACHE_DIR=1
@@ -19,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 
 # Instalar UV (package manager moderno)
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-ENV PATH="/root/.cargo/bin:$PATH"
+ENV PATH="/root/.local/bin:/root/.cargo/bin:$PATH"
 
 # Crear directorio de trabajo
 WORKDIR /workspace
@@ -27,15 +26,17 @@ WORKDIR /workspace
 # Copiar archivos de configuración primero (para cache de Docker)
 COPY pyproject.toml ./
 
-# Crear virtual environment con UV
-RUN uv venv .venv --python 3.11
+# Crear virtual environment con UV fuera del workspace (no se sobrescribe con el bind mount)
+RUN uv venv /opt/venv --python 3.11
 
-# Instalar dependencias con UV
-RUN uv pip install --python .venv/bin/python -r pyproject.toml
+# Instalar dependencias con UV (lockfile generado para Linux)
+RUN uv pip compile pyproject.toml -o /tmp/requirements.txt \
+    && uv pip install --python /opt/venv/bin/python -r /tmp/requirements.txt \
+    && rm /tmp/requirements.txt
 
 # Activar venv por default
-ENV PATH="/workspace/.venv/bin:$PATH"
-ENV VIRTUAL_ENV="/workspace/.venv"
+ENV PATH="/opt/venv/bin:$PATH"
+ENV VIRTUAL_ENV="/opt/venv"
 
 # Exponer puerto de Jupyter
 EXPOSE 8888
